@@ -1,0 +1,10 @@
+
+
+Will output the tag of the latest tagged commit across all branches
+
+git describe --tags $(git rev-list --tags --max-count=1)
+
+TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
+git describe --abbrev=0 --tags
+To get the latest annotated tag which targets only the current commit in the current branch, use 
+git describe --exact-match --abbrev=0
