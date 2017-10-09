@@ -1,0 +1,109 @@
+##|20:57:21.635 [go] Job Started: 2017-10-09 20:57:21 GMT
+##|20:57:21.635 
+pr|20:57:21.637 [go] Start to prepare gocd-test/2/whereami/1/whereami on 361d48acc8f3 [/go]
+pr|20:57:21.690 [go] Start to update materials.
+pr|20:57:21.690 
+pr|20:57:21.690 [go] Start updating files at revision 3bceaf7676a10fcec2df2fb7e49f9c17569343d7 from https://github.com/noldeni/gocd-test-repo.git
+pr|20:57:21.937 [GIT] Fetching changes
+pr|20:57:22.631 [GIT] Performing git gc
+pr|20:57:22.738 [GIT] Reset working directory pipelines/gocd-test
+pr|20:57:22.739 [GIT] Cleaning all unversioned files in working copy
+pr|20:57:22.957 [GIT] Cleaning submodule configurations in .git/config
+pr|20:57:23.063 [GIT] Updating working copy to revision 3bceaf7676a10fcec2df2fb7e49f9c17569343d7
+pr|20:57:23.073 HEAD is now at 3bceaf7 Initial commit
+pr|20:57:23.174 [GIT] Removing modified files in submodules
+pr|20:57:23.336 [GIT] Cleaning all unversioned files in working copy
+pr|20:57:23.547 [go] Done.
+pr|20:57:23.547 
+pr|20:57:23.548 [go] overriding environment variable 'GO_SERVER_URL' with value 'https://go-server:8154/go'
+pr|20:57:23.548 [go] setting environment variable 'GO_TRIGGER_USER' to value 'anonymous'
+pr|20:57:23.548 [go] setting environment variable 'GO_PIPELINE_NAME' to value 'gocd-test'
+pr|20:57:23.548 [go] setting environment variable 'GO_PIPELINE_COUNTER' to value '2'
+pr|20:57:23.548 [go] setting environment variable 'GO_PIPELINE_LABEL' to value '2'
+pr|20:57:23.548 [go] setting environment variable 'GO_STAGE_NAME' to value 'whereami'
+pr|20:57:23.549 [go] setting environment variable 'GO_STAGE_COUNTER' to value '1'
+pr|20:57:23.549 [go] setting environment variable 'GO_JOB_NAME' to value 'whereami'
+pr|20:57:23.549 [go] setting environment variable 'GO_REVISION' to value '3bceaf7676a10fcec2df2fb7e49f9c17569343d7'
+pr|20:57:23.549 [go] setting environment variable 'GO_TO_REVISION' to value '3bceaf7676a10fcec2df2fb7e49f9c17569343d7'
+pr|20:57:23.549 [go] setting environment variable 'GO_FROM_REVISION' to value '3bceaf7676a10fcec2df2fb7e49f9c17569343d7'
+pr|20:57:23.549 
+##|20:57:23.615 [go] Start to build gocd-test/2/whereami/1/whereami on 361d48acc8f3 [/go]
+!!|20:57:23.616 [go] Task: pwd
+&1|20:57:23.631 /godata/pipelines/gocd-test
+?0|20:57:23.725 [go] Task status: passed (109 ms)
+!!|20:57:23.725 [go] Task: ls -al
+&1|20:57:23.728 total 24
+&1|20:57:23.732 drwxr-xr-x    3 go       go            4096 Oct  9 20:52 .
+&1|20:57:23.733 drwxr-xr-x    3 go       go            4096 Oct  9 20:52 ..
+&1|20:57:23.733 drwxr-xr-x    8 go       go            4096 Oct  9 20:57 .git
+&1|20:57:23.734 -rw-r--r--    1 go       go             465 Oct  9 20:52 .gitignore
+&1|20:57:23.734 -rw-r--r--    1 go       go            1068 Oct  9 20:52 LICENSE
+&1|20:57:23.734 -rw-r--r--    1 go       go              55 Oct  9 20:52 README.md
+?0|20:57:23.832 [go] Task status: passed (107 ms)
+!!|20:57:23.833 [go] Task: id
+&1|20:57:23.846 uid=1000(go) gid=1000(go) groups=1000(go)
+?0|20:57:23.946 [go] Task status: passed (113 ms)
+!!|20:57:23.946 [go] Task: env
+&1|20:57:23.990 PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+&1|20:57:23.991 AGENT_STARTUP_ARGS=-Dcruise.console.publish.interval=10 -Xms128m -Xmx256m   -Dgo.console.stdout=true -Djava.security.egd=file:/dev/./urandom
+&1|20:57:23.994 GO_SERVER_NAME=/gomatic_goagent_1/go-server
+&1|20:57:23.995 GO_SERVER_1_PORT_8153_TCP_PROTO=tcp
+&1|20:57:23.996 GO_SERVER_1_ENV_LANG=en_US.utf8
+&1|20:57:23.997 GO_SERVER_1_PORT_8154_TCP_ADDR=172.17.0.2
+&1|20:57:23.998 LD_LIBRARY_PATH=/usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64/server:/usr/lib/jvm/java-1.8-openjdk/jre/lib/amd64:/usr/lib/jvm/java-1.8-openjdk/jre/../lib/amd64
+&1|20:57:23.999 GOMATIC_GO_SERVER_1_PORT=tcp://172.17.0.2:8153
+&1|20:57:24.000 GO_SERVER_PORT=tcp://172.17.0.2:8153
+&1|20:57:24.000 PWD=/go
+&1|20:57:24.001 GOMATIC_GO_SERVER_1_NAME=/gomatic_goagent_1/gomatic_go-server_1
+&1|20:57:24.002 GO_AGENT_SYSTEM_PROPERTIES=-Dgo.console.stdout=true
+&1|20:57:24.002 GO_SERVER_PORT_8153_TCP_PORT=8153
+&1|20:57:24.003 GO_SERVER_URL=https://go-server:8154/go
+&1|20:57:24.004 OLDPWD=/
+&1|20:57:24.005 GOMATIC_GO_SERVER_1_PORT_8153_TCP_PROTO=tcp
+&1|20:57:24.005 GOMATIC_GO_SERVER_1_PORT_8153_TCP_PORT=8153
+&1|20:57:24.006 GO_SERVER_PORT_8153_TCP_PROTO=tcp
+&1|20:57:24.007 GO_TRIGGER_USER=anonymous
+&1|20:57:24.008 SHLVL=0
+&1|20:57:24.008 GO_REVISION=3bceaf7676a10fcec2df2fb7e49f9c17569343d7
+&1|20:57:24.009 XFILESEARCHPATH=/usr/dt/app-defaults/%L/Dt
+&1|20:57:24.010 GO_SERVER_1_PORT_8154_TCP_PROTO=tcp
+&1|20:57:24.012 LANG=en_US.utf8
+&1|20:57:24.019 GOMATIC_GO_SERVER_1_ENV_LANG=en_US.utf8
+&1|20:57:24.020 GO_PIPELINE_NAME=gocd-test
+&1|20:57:24.021 GOMATIC_GO_SERVER_1_PORT_8154_TCP_PORT=8154
+&1|20:57:24.022 GOMATIC_GO_SERVER_1_PORT_8153_TCP_ADDR=172.17.0.2
+&1|20:57:24.022 GOMATIC_GO_SERVER_1_PORT_8153_TCP=tcp://172.17.0.2:8153
+&1|20:57:24.023 GOMATIC_GO_SERVER_1_PORT_8154_TCP=tcp://172.17.0.2:8154
+&1|20:57:24.031 GOMATIC_GO_SERVER_1_PORT_8154_TCP_PROTO=tcp
+&1|20:57:24.036 GO_SERVER_PORT_8154_TCP_PORT=8154
+&1|20:57:24.038 GO_SERVER_1_PORT_8153_TCP=tcp://172.17.0.2:8153
+&1|20:57:24.039 GO_SERVER_PORT_8154_TCP_PROTO=tcp
+&1|20:57:24.040 GO_TO_REVISION=3bceaf7676a10fcec2df2fb7e49f9c17569343d7
+&1|20:57:24.043 GO_SERVER_PORT_8153_TCP_ADDR=172.17.0.2
+&1|20:57:24.044 AGENT_WORK_DIR=/go
+&1|20:57:24.050 GO_SERVER_ENV_LANG=en_US.utf8
+&1|20:57:24.052 GO_SERVER_1_PORT_8153_TCP_PORT=8153
+&1|20:57:24.053 GO_SERVER_PORT_8154_TCP=tcp://172.17.0.2:8154
+&1|20:57:24.058 GO_FROM_REVISION=3bceaf7676a10fcec2df2fb7e49f9c17569343d7
+&1|20:57:24.059 GO_PIPELINE_LABEL=2
+&1|20:57:24.061 GOMATIC_GO_SERVER_1_PORT_8154_TCP_ADDR=172.17.0.2
+&1|20:57:24.062 GO_STAGE_NAME=whereami
+&1|20:57:24.070 GO_SERVER_1_PORT_8154_TCP=tcp://172.17.0.2:8154
+&1|20:57:24.071 LOG_DIR=/go/logs
+&1|20:57:24.072 GO_SERVER_PORT_8153_TCP=tcp://172.17.0.2:8153
+&1|20:57:24.072 GO_SERVER_PORT_8154_TCP_ADDR=172.17.0.2
+&1|20:57:24.073 HOSTNAME=361d48acc8f3
+&1|20:57:24.073 GO_STAGE_COUNTER=1
+&1|20:57:24.074 GO_SERVER_1_PORT=tcp://172.17.0.2:8153
+&1|20:57:24.074 NLSPATH=/usr/dt/lib/nls/msg/%L/%N.cat
+&1|20:57:24.078 GO_PIPELINE_COUNTER=2
+&1|20:57:24.079 GO_SERVER_1_PORT_8153_TCP_ADDR=172.17.0.2
+&1|20:57:24.079 GO_JOB_NAME=whereami
+&1|20:57:24.080 GO_SERVER_1_PORT_8154_TCP_PORT=8154
+&1|20:57:24.080 HOME=/home/go
+&1|20:57:24.081 GO_SERVER_1_NAME=/gomatic_goagent_1/go-server_1
+?0|20:57:24.150 [go] Task status: passed (204 ms)
+j0|20:57:24.176 [go] Current job status: passed
+##|20:57:24.193 [go] Start to create properties gocd-test/2/whereami/1/whereami on 361d48acc8f3 [/go]
+ar|20:57:24.193 [go] Start to upload gocd-test/2/whereami/1/whereami on 361d48acc8f3 [/go]
+ex|20:57:24.310 [go] Job completed gocd-test/2/whereami/1/whereami on 361d48acc8f3 [/go]
