@@ -1,10 +1,10 @@
-FROM ubuntu:16.04
-MAINTAINER Jeremy Nicklas <jeremywnicklas@gmail.com>
+FROM gocd/gocd-agent-ubuntu-16.04:v17.10.0
+#FROM ubuntu:16.04
+MAINTAINER Ingo Nolden <dev@nolden.org>
 
 # Set up requirements
 RUN export DEBIAN_FRONTEND=noninteractive \
   && apt-get update && apt-get install --yes --no-install-recommends \
-    default-jre \
     graphviz \
     python \
     ghostscript \
