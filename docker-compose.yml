@@ -1,0 +1,21 @@
+version: '3'
+services :
+  gocd :
+    image : gocd/gocd-server:v17.10.0
+    container_name : gocd-server
+#    environment :
+#      GO_SERVER_SYSTEM_PROPERTIES : "-Xmx4096mb"
+    volumes :
+      - ./godata:/godata
+      - ./home:/home/go
+    ports :
+      - 8153:8153
+      - 8154:8154
+  goagent:
+    image: gocd/gocd-agent-alpine-3.5:v17.10.0
+#    links:
+#      - go-server
+    environment:
+      GO_SERVER_URL: https://gocd-server:8154/go
+      AGENT_AUTO_REGISTER_KEY: '123456789abcdef'
+      AGENT_AUTO_REGISTER_RESOURCES: 'java,python,test'
