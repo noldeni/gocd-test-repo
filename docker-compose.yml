@@ -1,0 +1,35 @@
+version: '3'
+services :
+  gocd :
+    image : gocd/gocd-server:v17.10.0
+    container_name : gocd-server
+#    environment :
+#      GO_SERVER_SYSTEM_PROPERTIES : "-Xmx2048mb"
+    volumes :
+      - ./gocdserver/godata:/godata
+      - ./gocdserver/home:/home/go
+    ports :
+      - 8153:8153
+      - 8154:8154
+  goagent:
+    image: gocd/gocd-agent-alpine-3.5:v17.10.0
+    container_name : gocd-agent-1
+#    links:
+#      - go-server
+    environment:
+      GO_SERVER_URL: https://gocd-server:8154/go
+      AGENT_AUTO_REGISTER_KEY: '331d13eb-7134-4826-982f-6ae3c787f21c'
+      AGENT_AUTO_REGISTER_RESOURCES: 'java,python,test'
+  dockeragent:
+    image: noldeni/gocd-agent-docker:1.0
+    container_name : gocd-docker-agent-1
+    volumes :
+      - ./dockeragent/godata:/godata
+      - ./dockeragent/home:/home/go
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /usr/bin/docker:/usr/bin/docker
+    environment:
+      GO_SERVER_URL: https://gocd-server:8154/go
+      AGENT_AUTO_REGISTER_KEY: '331d13eb-7134-4826-982f-6ae3c787f21c'
+      AGENT_AUTO_REGISTER_RESOURCES: 'docker,java,python,test'
+

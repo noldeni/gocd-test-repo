@@ -1,0 +1,5 @@
+FROM gocd/gocd-agent-alpine-3.5:v17.10.0
+
+RUN apk add --no-cache sudo \
+  && echo "go ALL=NOPASSWD: /usr/bin/docker" >> /etc/sudoers
+
