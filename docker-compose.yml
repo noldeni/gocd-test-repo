@@ -1,0 +1,7 @@
+version: "2"
+services:
+  sphinx:
+    image: "eomir/docker-sphinx"
+    volumes:
+      - "${PWD}:/doc"
+    user: "$(id -u):$(id -g)"
