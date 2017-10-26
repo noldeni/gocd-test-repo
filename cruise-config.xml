@@ -21,7 +21,8 @@
               <exec command="id">
                 <runif status="passed" />
               </exec>
-              <exec command="./build_html.sh">
+              <exec command="./build.sh">
+                <arg>--html</arg>
                 <runif status="passed" />
               </exec>
             </tasks>
@@ -55,6 +56,34 @@
           </job>
         </jobs>
       </stage>
+      <stage name="Deploy" fetchMaterials="false">
+        <jobs>
+          <job name="deploy">
+            <environmentvariables>
+              <variable name="user">
+                <value>noldeni</value>
+              </variable>
+            </environmentvariables>
+            <tasks>
+              <fetchartifact pipeline="Netzwerkdokumentation" stage="Build" job="build" srcdir="build">
+                <runif status="passed" />
+              </fetchartifact>
+              <exec command="ls">
+                <arg>-lR</arg>
+                <runif status="passed" />
+              </exec>
+              <exec command="env">
+                <runif status="passed" />
+              </exec>
+              <exec command="/bin/bash">
+                <arg>-c</arg>
+                <arg>scp -r build/html ${user}@213.168.71.42:~/gotest</arg>
+                <runif status="passed" />
+              </exec>
+            </tasks>
+          </job>
+        </jobs>
+      </stage>
     </pipeline>
   </pipelines>
   <agents>
@@ -74,6 +103,13 @@
       </resources>
     </agent>
     <agent hostname="8177688b891e" ipaddress="172.19.0.2" uuid="ffb490ed-c858-4b82-8383-ba6db4f0f9cb">
+      <resources>
+        <resource>java</resource>
+        <resource>python</resource>
+        <resource>test</resource>
+      </resources>
+    </agent>
+    <agent hostname="7ef204995d98" ipaddress="172.19.0.3" uuid="48245a31-49d9-4028-8aa4-a422c0702177">
       <resources>
         <resource>java</resource>
         <resource>python</resource>
