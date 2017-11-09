@@ -44,5 +44,5 @@ then
 fi
 
 echo "Building $BUILDTYPE"
-/usr/bin/docker run --rm -i -v "${PWD}:/doc" -u "$(id -u):$(id -g)" eomir/docker-sphinx make $BUILDTYPE
+/usr/bin/docker run --rm -i -v "${PWD}:/doc" -u "$(id -u):$(id -g)" noldeni/docker-sphinx:1.0 make $BUILDTYPE
 
